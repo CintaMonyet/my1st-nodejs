@@ -13,7 +13,7 @@ var app = express();
 
 //Set up mongoose connection
 var mongoose = require('mongoose');
-var mongoDB = 'mongodb://admin_db:KolonyetDial-18@ds239117.mlab.com:39117/my_localdb_google';
+var mongoDB = process.env.MONGODB_URI || 'mongodb://admin_db:KolonyetDial-18@ds239117.mlab.com:39117/my_localdb_google';
 mongoose.connect(mongoDB);
 mongoose.Promise = global.Promise;
 var db = mongoose.connection;
